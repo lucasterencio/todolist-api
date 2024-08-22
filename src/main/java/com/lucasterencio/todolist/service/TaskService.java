@@ -3,6 +3,7 @@ package com.lucasterencio.todolist.service;
 import com.lucasterencio.todolist.model.Mensagem;
 import com.lucasterencio.todolist.model.Task;
 import com.lucasterencio.todolist.repository.TaskRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,11 @@ public class TaskService {
 
     public ResponseEntity<?> listTask(){
         return new ResponseEntity<>(taskRepository.findAll(), HttpStatus.OK);
+    }
+
+    public ResponseEntity<?> listarId(Long id){
+        Task obj = taskRepository.findById(id).orElse(null);
+        return new ResponseEntity<>(obj, HttpStatus.OK);
     }
 
     public ResponseEntity<?> createTask(Task task){
@@ -65,4 +71,19 @@ public class TaskService {
             return new ResponseEntity<>(mensagem, HttpStatus.OK);
         }
     }
+
+    public ResponseEntity<?> deleteTaskById(Long id){
+        if(taskRepository.countById(id) == 0){
+            mensagem.setMensagem("Id não existe");
+            return new ResponseEntity<>(mensagem, HttpStatus.NOT_FOUND);
+        } else{
+            Task obj = taskRepository.findById(id).orElse(null);
+            taskRepository.delete(obj);
+
+            mensagem.setMensagem("Pessoa removida com sucesso");
+            return new ResponseEntity<>(mensagem, HttpStatus.OK);
+        }
+    }
+
+
 }
