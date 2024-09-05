@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 96%); 
+    background-repeat: no-repeat;
+}
+
+.form{
+    width: 800px;
+    height: 150px;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+
+    h1{
+        margin-bottom: 30px;
+        color: white;
+        font-size: 38px;
+    }
+    
+
+    & div:nth-child(1){
+        margin: 15px 0;
+    }
+
+    & div:nth-child(2) > input {
+        width: 450px;
+        height: 35px;
+        outline: none;
+        border-radius: 15px;
+        border: 0;
+        padding-left: 8px;
+        font-size: 18px;
+    }
+
+    & div:nth-child(2) > button{
+        border: 0;
+        background-color: rgba(35, 35, 35, 0.663);
+        color: white;
+        height: 35px;
+        border-radius: 15px;
+        padding: 0 5px;
+        cursor: pointer;
+    }
+
+    & div:nth-child(2) > button:hover{
+        color: rgba(255, 255, 255, 0.775);
+    }
+
+    & div:nth-child(2){
+        display: flex;
+        width: 700px;
+        align-items: center;
+        justify-content: space-between; 
+    }
+}
+
+
+
+section:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+
+    & div{
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        width: 460px;
+        background-color: rgba(0, 0, 0, 0.079);
+        height: 50px;
+        align-items: center;
+        border-radius: 20px;
+        padding-left: 7px;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    p{
+        font-size: 18px;
+        color: white;
+    }
+    
+}
+
+.inputs-selecionar{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.button{
+    font-size: 18px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    
+}
+
+.button:hover{
+    /* background-color: rgba(0, 0, 0, 0.356); */
+    color: rgba(255, 255, 255, 0.775);
+}
+
+.btnAdicionar{
+    margin-right: 100px;
+    width: 100px;
+}
+
+.none{
+    display: none;
+}

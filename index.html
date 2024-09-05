@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <section class="form">
+        <div>
+            <h1>Todo List</h1>
+        </div>
+
+        <div>
+            <input type="text" placeholder="Adicione um item" class="input-add">
+            <button class="btnAdicionar button" onclick="createTask()">Adicionar</button>
+            <div class="inputs-selecionar none">
+                <button class="btnEditar button">Editar</button>
+                <button class="btnExcluir button">Excluir</button>
+                <button class="btnCancelar button">Cancelar</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="task"></section>
+    
+</body>
+</html>
